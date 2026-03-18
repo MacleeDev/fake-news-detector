@@ -1,56 +1,67 @@
-  #   =     F a k e   N e w s   D e t e c t o r   ( A I   +   W e b   A p p ) 
- 
- A   f u l l - s t a c k   M L   s y s t e m   t h a t   c l a s s i f i e s   n e w s   a s   * * R E A L * *   o r   * * F A K E * *   u s i n g   N L P . 
- 
- # #   =Ø€   F e a t u r e s 
- -   N L P - b a s e d   f a k e   n e w s   c l a s s i f i c a t i o n 
- -   B a c k e n d   A P I   ( F a s t A P I ) 
- -   S i m p l e   f r o n t e n d   w e b   i n t e r f a c e 
- -   M o d e l   i n f e r e n c e   p i p e l i n e 
- 
- # #   >     T e c h   S t a c k 
- -   P y t h o n ,   F a s t A P I ,   P y T o r c h / T r a n s f o r m e r s 
- -   H T M L / C S S / J S   f o r   f r o n t e n d 
- -   U v i c o r n   s e r v e r 
- 
- # #   =     D e m o 
- 
- # # #   F r o n t e n d   U I 
- ! [ F r o n t e n d   D e m o ] ( s c r e e n s h o t s / d e m o - f r o n t e n d . p n g ) 
- 
- # # #   B a c k e n d   R u n n i n g 
- ! [ B a c k e n d   D e m o ] ( s c r e e n s h o t s / d e m o - b a c k e n d . p n g ) 
- 
- >    &   N o t e :   M o d e l   f i l e s   a r e   r e m o v e d   f r o m   t h e   r e p o   t o   r e d u c e   s i z e .   T h e   a p p   w o r k f l o w   w o r k s ;   a c t u a l   m o d e l   i n f e r e n c e   r e q u i r e s   d o w n l o a d i n g   p r e t r a i n e d   f i l e s . 
- 
- # #    &   D a t a s e t 
- D u e   t o   s i z e ,   d a t a s e t s   a r e   n o t   i n c l u d e d .   D o w n l o a d   f r o m : 
- 
- [ K a g g l e   F a k e / R e a l   N e w s   D a t a s e t ] ( h t t p s : / / w w w . k a g g l e . c o m / d a t a s e t s / c l m e n t b i s a i l l o n / f a k e - a n d - r e a l - n e w s - d a t a s e t ) 
- 
- P l a c e   i n   d a t a s e t s /   f o l d e r : 
- -   F a k e . c s v 
- -   T r u e . c s v 
- 
- # #    &   S e t u p   
- 
- 1 .   C l o n e   t h e   r e p o : 
- \ \ \  a s h 
- g i t   c l o n e   h t t p s : / / g i t h u b . c o m / M a c l e e D e v / f a k e - n e w s - d e t e c t o r . g i t 
- c d   f a k e - n e w s - a i / b a c k e n d 
- \ \ \ 
- 2 .   I n s t a l l   d e p e n d e n c i e s : 
- \ \ \  a s h 
- p i p   i n s t a l l   - r   r e q u i r e m e n t s . t x t 
- \ \ \ 
- 3 .   R u n   b a c k e n d : 
- \ \ \  a s h 
- u v i c o r n   a p p . m a i n : a p p   - - r e l o a d 
- \ \ \ 
- 4 .   O p e n   f r o n t e n d   i n d e x . h t m l   i n   b r o w s e r 
- 
- # #   = d   A u t h o r 
- * * M a c l e e   M a i n a   M u t u r i * *     
- C o m p u t e r   S c i e n c e   S t u d e n t   |   A I   &   S o f t w a r e   D e v e l o p e r 
- 
- 
+# Fake News Detector AI
+
+Detect fake news articles with a simple web interface powered by a Python AI model. Paste any news article or upload a text file, click **Analyze**, and get an instant prediction with a confidence score.
+
+---
+
+## Live Demo / Screenshots
+
+For portfolio purposes, there’s a **demo mode** that can show a sample prediction (e.g., FAKE with 95% confidence) even without running the model.
+
+![Frontend Demo Screenshot](screenshots/demo-frontend.png)
+
+---
+
+## Features
+
+- Text Input & PDF Upload
+- Real-Time Prediction (FastAPI + Transformers)
+- Demo Mode for quick portfolio screenshots
+- Clean Chat UI
+
+---
+
+## Getting Started (PowerShell Commands)
+
+# Clone repo if needed
+git clone git@github.com:MacleeDev/fake-news-detector.git
+cd fake-news-detector
+
+# Folder structure
+screenshots/
+backend/models/
+js/
+css/
+
+# Virtual environment
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+
+# Install backend dependencies
+pip install -r backend/requirements.txt
+
+# Start backend
+cd backend
+uvicorn app.main:app --reload
+
+# Open frontend
+Start-Process "..\index.html"
+
+---
+
+## File Structure
+
+---
+
+## Portfolio Use
+
+1. Open index.html.
+2. Check Demo Mode.
+3. Paste fake news ? Analyze ? screenshot.
+4. Uncheck Demo Mode for real predictions.
+
+---
+
+## License
+
+MIT License
