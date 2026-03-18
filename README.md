@@ -1,3 +1,4 @@
+HEAD
 # 🧠 Fake News Detector AI
 
 A full-stack AI system that detects misinformation using a fine-tuned BERT model.
@@ -39,3 +40,7 @@ Frontend → REST API → BERT Model
 
 ```bash
 uvicorn app.main:app --reload
+
+# fake-news-detector
+A full-stack AI application that detects fake news in text using a BERT model with confidence scoring, sentence highlighting, and an interactive web frontend.
+ 92a8ca4488bfcbb22a263d4aa85b3cbf45fcaadb
