@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Fake News Detector AI</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <h2>🧠 Detector AI</h2>
+    <button id="newChat">+ New Analysis</button>
+    <button id="uploadBtn">Upload PDF</button>
+  </aside>
+
+  <main class="chat">
+
+    <div id="chat-window"></div>
+
+    <div class="input-area">
+      <textarea id="newsText"
+        placeholder="Paste news article here..."></textarea>
+      <button id="analyzeBtn">Analyze</button>
+    </div>
+
+  </main>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
