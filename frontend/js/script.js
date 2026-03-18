@@ -1,6 +1,7 @@
 document.getElementById("analyzeBtn").onclick = async () => {
 
   const text = document.getElementById("newsText").value.trim();
+  const demoMode = document.getElementById("demoToggle").checked; // ✅ demo toggle
 
   if (!text) return alert("Enter some text");
 
@@ -11,7 +12,19 @@ document.getElementById("analyzeBtn").onclick = async () => {
   appendMessage("🧠 Analyzing article...", "bot");
 
   try {
+    // ✅ If demo mode is on, show fake output
+    if (demoMode) {
+      const loadingMsg = document.querySelector("#chat-window .message.bot:last-child");
+      if (loadingMsg) loadingMsg.remove();
 
+      appendMessage(
+        "Prediction: <strong>FAKE</strong><br>Confidence: 95%",
+        "bot"
+      );
+      return; // skip backend
+    }
+
+    // ❌ Normal API call for real input
     const response = await fetch("http://127.0.0.1:8000/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -40,40 +53,4 @@ document.getElementById("analyzeBtn").onclick = async () => {
       "bot"
     );
   }
-};
-
-
-//////////////////////////////
-// 📄 FILE UPLOAD HANDLER
-//////////////////////////////
-
-document.getElementById("uploadBtn").onclick = () => {
-
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = ".txt,.pdf";
-
-  input.onchange = async e => {
-
-    const file = e.target.files[0];
-    if (!file) return;
-
-    // TXT support
-    if (file.type === "text/plain") {
-
-      const text = await file.text();
-      document.getElementById("newsText").value = text;
-
-    }
-
-    // PDF placeholder
-    else if (file.type === "application/pdf") {
-
-      alert("📄 PDF support coming soon. Paste text for now.");
-
-    }
-
-  };
-
-  input.click();
 };
